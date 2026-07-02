@@ -1,0 +1,79 @@
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-[#FAF8F6] text-[#2E2E2E]">
+
+      {/* HERO */}
+      <section className="flex flex-col items-center justify-center text-center px-6 py-24">
+        
+        <h1 className="text-5xl md:text-6xl font-serif font-semibold">
+          Chez Carla
+        </h1>
+
+        <p className="mt-4 text-lg md:text-xl max-w-2xl text-gray-600">
+          Manucure & soins des ongles à Genève.  
+          Élégance, précision et douceur pour sublimer vos mains.
+        </p>
+
+        <div className="mt-8 flex gap-4 flex-wrap justify-center">
+          <button className="bg-black text-white px-6 py-3 rounded-full hover:opacity-80 transition">
+            Prendre rendez-vous
+          </button>
+
+          <button className="border border-black px-6 py-3 rounded-full hover:bg-black hover:text-white transition">
+            Voir les prestations
+          </button>
+        </div>
+
+      </section>
+
+      {/* PRESTATIONS */}
+      <section className="px-6 py-20 max-w-5xl mx-auto">
+        
+        <h2 className="text-3xl font-semibold text-center mb-10">
+          Prestations & Tarifs
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-4">
+
+          {[
+            ["Manucure simple", "30 CHF"],
+            ["Manucure + vernis classique", "40 CHF"],
+            ["Semi-permanent sans manucure", "45 CHF"],
+            ["Manucure + semi-permanent", "dès 60 CHF"],
+            ["Manucure + semi-permanent renforcé", "dès 70 CHF"],
+            ["Gel sur ongle naturel", "95 CHF"],
+            ["Pose chablon (rallongement)", "110 CHF"],
+            ["Remplissage gel", "85 CHF"],
+            ["Dépose seule", "25 CHF"],
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="flex justify-between bg-white shadow-sm rounded-2xl p-4"
+            >
+              <span>{item[0]}</span>
+              <span className="font-semibold">{item[1]}</span>
+            </div>
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* CONTACT */}
+      <section className="text-center py-20 px-6 bg-white">
+
+        <h2 className="text-3xl font-semibold">Genève</h2>
+
+        <p className="text-gray-600 mt-2">
+          Sur rendez-vous uniquement
+        </p>
+
+        <button className="mt-6 bg-black text-white px-6 py-3 rounded-full hover:opacity-80 transition">
+          Réserver maintenant
+        </button>
+
+      </section>
+
+    </main>
+  );
+}
