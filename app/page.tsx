@@ -9,34 +9,58 @@ export default function Home() {
 
   const services = [
     {
-      title: "💅 Manucure Signature",
-      price: "30 CHF",
-      desc: "Soin complet des mains avec mise en forme des ongles et finition élégante."
+      category: "💅 MANUCURE",
+      items: [
+        { title: "Manucure (sans vernis)", price: "35 CHF", time: "20 min" },
+        { title: "Manucure + vernis classique", price: "45 CHF", time: "30 min" },
+        { title: "Limage + vernis classique", price: "25 CHF", time: "15 min" },
+        { title: "Manucure + semi-permanent", price: "65 CHF", time: "45 min", note: "+ dépose +10 CHF" },
+        { title: "Limage + semi-permanent (sans manucure)", price: "50 CHF", time: "30 min" },
+        { title: "Renforcement ongle naturel", price: "75 CHF", time: "50 min" },
+        { title: "Remplissage gel", price: "90 CHF", time: "75 min", note: "max 4 semaines" },
+        { title: "Remplissage gel (+4 semaines)", price: "100 CHF", time: "90 min" },
+        { title: "Pose gel chablon", price: "120 CHF", time: "90 min" },
+        { title: "Réparation ongle cassé", price: "dès 5 CHF" },
+        { title: "Dépose semi-permanent", price: "20 CHF", time: "20 min" },
+        { title: "Dépose gel", price: "30 CHF", time: "30 min" },
+        { title: "Mini manucure (-14 ans)", price: "20 CHF", time: "15 min" }
+      ]
     },
+
     {
-      title: "✨ Semi-Permanent",
-      price: "dès 60 CHF",
-      desc: "Couleur brillante longue tenue pour des ongles parfaits pendant plusieurs semaines."
+      category: "🎨 NAIL ART",
+      items: [
+        { title: "French", price: "10 CHF", time: "10 min" },
+        { title: "Babyboomer / babycolor", price: "10 CHF", time: "10 min" },
+        { title: "Effets (chrome, poudre...)", price: "10 CHF", time: "10 min" }
+      ]
     },
+
     {
-      title: "🌸 Gel Naturel",
-      price: "95 CHF",
-      desc: "Renforcement naturel pour un résultat fin, solide et élégant."
+      category: "🦶 BEAUTÉ DES PIEDS",
+      items: [
+        { title: "Pédicure express (sans vernis)", price: "50 CHF", time: "30 min" },
+        { title: "Pédicure + vernis classique", price: "65 CHF", time: "40 min" },
+        { title: "Limage + vernis classique", price: "35 CHF", time: "15 min" },
+        { title: "Pédicure + semi-permanent", price: "75 CHF", time: "45 min", note: "+ dépose +10 CHF" },
+        { title: "Limage + semi-permanent", price: "60 CHF", time: "30 min" },
+        { title: "Pédicure spa (sans vernis)", price: "70 CHF", time: "40 min" },
+        { title: "Pédicure spa + vernis", price: "85 CHF", time: "50 min" },
+        { title: "Pédicure spa + semi-permanent", price: "95 CHF", time: "60 min", note: "+ dépose +10 CHF" },
+        { title: "Construction ongle gel", price: "10 CHF" },
+        { title: "Mini pédicure (-14 ans)", price: "30 CHF", time: "15 min" },
+        { title: "Massage + gommage pieds", price: "45 CHF", time: "30 min" }
+      ]
     },
+
     {
-      title: "💎 Gel Chablon",
-      price: "110 CHF",
-      desc: "Extension sur mesure pour une longueur et une forme parfaite."
-    },
-    {
-      title: "🔄 Remplissage",
-      price: "85 CHF",
-      desc: "Entretien du gel pour garder une manucure impeccable."
-    },
-    {
-      title: "🌿 Dépose",
-      price: "25 CHF",
-      desc: "Retrait doux et professionnel dans le respect de l’ongle naturel."
+      category: "🔥 OFFRES",
+      items: [
+        { title: "Manucure + pédicure SPA (sans vernis)", price: "90 CHF", oldPrice: "105 CHF", time: "60 min" },
+        { title: "Manucure + vernis + pédicure SPA + vernis", price: "115 CHF", oldPrice: "130 CHF", time: "80 min" },
+        { title: "Manucure + semi + pédicure SPA semi", price: "145 CHF", oldPrice: "160 CHF", time: "105 min" },
+        { title: "Étudiant", price: "-10%", note: "sur présentation carte" }
+      ]
     }
   ];
 
@@ -86,6 +110,7 @@ export default function Home() {
           <img
             src="https://images.unsplash.com/photo-1604654894610-df63bc536371"
             className="w-full h-full object-cover"
+            alt="nails"
           />
         </div>
       </section>
@@ -99,41 +124,10 @@ export default function Home() {
         <p className="opacity-70 text-lg leading-loose">
           Situé au sein du salon Coiffure Ashraf aux Pâquis, Caly Nails vous accueille
           dans une ambiance conviviale et professionnelle.
-          Avec plus de 10 ans d'expérience, les prestations sont réalisées avec
-          passion et souci du détail.
-          L'hygiène est une priorité absolue avec du matériel désinfecté pour chaque cliente.
-          <br /><br />
-          <strong>Caly Nails – Le soin du détail jusqu'au bout des ongles.</strong>
+          Avec plus de 10 ans d'expérience, les prestations sont réalisées avec passion
+          et souci du détail.
+          L'hygiène est une priorité absolue.
         </p>
-      </section>
-
-      {/* AVANTAGES */}
-      <section className="max-w-6xl mx-auto px-6 py-24 reveal">
-        <h2 className="text-4xl text-center mb-14">
-          Pourquoi choisir Caly Nails ?
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-
-          <div className="bg-white p-8 rounded-3xl text-center lift">
-            <div className="text-5xl mb-4">💖</div>
-            <h3 className="text-xl mb-3">Passion</h3>
-            <p className="opacity-70">Chaque détail est travaillé avec soin.</p>
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl text-center lift">
-            <div className="text-5xl mb-4">🧼</div>
-            <h3 className="text-xl mb-3">Hygiène</h3>
-            <p className="opacity-70">Matériel propre et désinfecté.</p>
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl text-center lift">
-            <div className="text-5xl mb-4">🌸</div>
-            <h3 className="text-xl mb-3">Détente</h3>
-            <p className="opacity-70">Un moment rien que pour vous.</p>
-          </div>
-
-        </div>
       </section>
 
       {/* SERVICES */}
@@ -142,28 +136,40 @@ export default function Home() {
           Prestations
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        {services.map((section, i) => (
+          <div key={i} className="mb-14">
 
-          {services.map((s, i) => (
-            <div
-              key={i}
-              onClick={() => setOpen(open === i ? null : i)}
-              className="bg-white border border-[#ead8ca] p-6 rounded-3xl cursor-pointer lift"
-            >
-              <div className="flex justify-between">
-                <span>{s.title}</span>
-                <span className="opacity-60">{s.price}</span>
-              </div>
+            <h3 className="text-2xl text-center mb-8">
+              {section.category}
+            </h3>
 
-              <div className={`overflow-hidden transition-all duration-500 ${
-                open === i ? "max-h-40 mt-4" : "max-h-0"
-              }`}>
-                <p className="text-sm opacity-70">{s.desc}</p>
-              </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {section.items.map((s, j) => (
+                <div
+                  key={j}
+                  className="bg-white border border-[#ead8ca] p-6 rounded-3xl lift"
+                >
+                  <div className="flex justify-between">
+                    <span>{s.title}</span>
+                    <span className="opacity-60">{s.price}</span>
+                  </div>
+
+                  {(s.time || s.note || s.oldPrice) && (
+                    <div className="mt-3 text-sm opacity-70">
+                      {s.time && <p>{s.time}</p>}
+                      {s.note && <p>{s.note}</p>}
+                      {s.oldPrice && (
+                        <p className="line-through opacity-50">
+                          {s.oldPrice}
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
-
-        </div>
+          </div>
+        ))}
       </section>
 
       {/* CTA */}
