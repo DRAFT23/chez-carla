@@ -3,11 +3,24 @@
 import { useState } from "react";
 import { useReveal } from "./useReveal";
 
+type ServiceItem = {
+  title: string;
+  price: string;
+  time?: string;
+  note?: string;
+  oldPrice?: string;
+};
+
+type ServiceSection = {
+  category: string;
+  items: ServiceItem[];
+};
+
 export default function Home() {
   useReveal();
   const [open, setOpen] = useState<number | null>(null);
 
-  const services = [
+  const services: ServiceSection[] = [
     {
       category: "💅 MANUCURE",
       items: [
@@ -124,9 +137,7 @@ export default function Home() {
         <p className="opacity-70 text-lg leading-loose">
           Situé au sein du salon Coiffure Ashraf aux Pâquis, Caly Nails vous accueille
           dans une ambiance conviviale et professionnelle.
-          Avec plus de 10 ans d'expérience, les prestations sont réalisées avec passion
-          et souci du détail.
-          L'hygiène est une priorité absolue.
+          L'hygiène et la qualité sont notre priorité.
         </p>
       </section>
 
