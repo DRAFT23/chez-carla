@@ -4,29 +4,27 @@ import { useEffect } from "react";
 
 export function useReveal() {
   useEffect(() => {
+    const elements = document.querySelectorAll(".reveal");
+
     const isMobile = window.innerWidth < 768;
 
-    // 👉 SUR MOBILE : on affiche direct (pas d'animation bug)
+    // mobile = pas d’animation fragile
     if (isMobile) {
-      document.querySelectorAll(".reveal").forEach((el) => {
-        (el as HTMLElement).style.opacity = "1";
-        (el as HTMLElement).style.transform = "none";
+      elements.forEach((el) => {
+        (el as HTMLElement).classList.add("show");
       });
       return;
     }
-
-    // 👉 DESKTOP : animation normale
-    const elements = document.querySelectorAll(".reveal");
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            (entry.target as HTMLElement).classList.add("show");
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
 
     elements.forEach((el) => observer.observe(el));
